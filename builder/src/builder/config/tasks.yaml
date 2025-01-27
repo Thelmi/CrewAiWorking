@@ -1,27 +1,48 @@
 research_task:
   description: >
-    Research {brand_name} and provide a summary of their online presence, key information, and recent activities."
+    Research about: {description}.
   expected_output: >
-    A structured summary containing: \n1. Brief overview of {brand_name}\n2. Key online platforms and follower counts\n3. Recent notable activities or campaigns\n4. Main products or services\n5. Any recent news or controversies"
+    A structured research report containing: \n1. Brief overview \n2. Key features, services, or products \n3. Market presence and target audience \n4. Competitive landscape \n5. Any recent developments or notable achievements \n6. Challenges and potential opportunities.
   agent: researcher
 
-monitoring_task:
+market_research_task:
   description: >
-    Monitor social media platforms for mentions of '{brand_name}' in the last 24 hours. Provide a summary of the mentions.
+    Conduct research on the {market}. Gather detailed information about its size, key players, trends, growth potential, customer demographics, and any challenges or opportunities within the specified market.
   expected_output: >
-    A structured report containing: \n1. Total number of mentions\n2. Breakdown by platform (e.g., Twitter, Instagram, Facebook)\n3. Top 5 most engaging posts or mentions\n4. Any trending hashtags associated with {brand_name}\n5. Notable influencers or accounts mentioning {brand_name}
-  agent: social_media_monitor
+    A comprehensive market research report containing: \n1. Overview of the {market} \n2. Market size and growth rate \n3. Key trends and emerging opportunities \n4. Major players and their market share \n5. Customer demographics and preferences \n6. Challenges and potential barriers \n7. Recommendations for entering or succeeding in the market.
+  agent: market_researcher
+
+social_media_researcher_task:
+  description: >
+    Conduct research on the social media presence of {description}. Analyze their performance across various platforms and gather insights about their engagement, audience, and overall strategy.
+  expected_output: >
+    A detailed social media research report containing: \n1. Overview of the company's/idea's/service's/business's social media presence \n2. List of platforms with follower counts and engagement metrics \n3. Top-performing posts and campaigns \n4. Audience demographics and behavior \n5. Competitor comparison (if applicable) \n6. Suggestions for improving social media strategy.
+  agent: social_media_researcher
 
 sentiment_analysis_task:
   description: >
-    Analyze the sentiment of the social media mentions about {brand_name}. Categorize them as positive, negative, or neutral.
+    Analyze the sentiment of the social media mentions about {description}. Categorize them as positive, negative, or neutral.
   expected_output: >
-    A sentiment analysis report containing: \n1. Overall sentiment distribution (% positive, negative, neutral)\n2. Key positive themes or comments\n3. Key negative themes or comments\n4. Any notable changes in sentiment compared to previous periods\n5. Suggestions for sentiment improvement if necessary
+    A sentiment analysis report with json format containing: \n1. Total mentions analyzed \n2. Percentage of positive, negative, and neutral mentions \n3. Sample comments for each sentiment category \n4. Insights or trends based on sentiment analysis.
   agent: sentiment_analyzer
 
-report_generation_task:
+sales_research_task:
   description: >
-    Generate a comprehensive report about {brand_name} based on the research, social media mentions, and sentiment analysis. Include key insights and recommendations.
+    Research the sales performance and potential of {description} in {market}. Gather insights on their current sales strategy, competitors, and opportunities for growth.
   expected_output: >
-    A comprehensive report structured as follows: \n1. Executive Summary\n2. Brand Overview\n3. Social Media Presence Analysis\n4. Sentiment Analysis\n5. Key Insights\n6. Recommendations for Improvement\n7. Conclusion.
-  agent: report_generator
+    A detailed sales research report containing: \n1. Current sales performance metrics (if available) \n2. Sales trends and patterns in the specific market \n3. Key competitors and their sales strategies \n4. Potential opportunities for sales growth \n5. Challenges and barriers to sales success \n6. Recommendations to optimize sales performance.
+  agent: sales_researcher
+
+sales_prediction_task:
+  description: >
+    Predict the sales performance of {description} in {market}. Use available data, market trends, and consumer behavior to forecast potential sales outcomes.
+  expected_output: >
+    A detailed sales prediction report containing: Predicted sales figures for a timeperiod.
+  agent: sales_predictor
+
+improvement_task:
+  description: >
+    Analyze the {description} in {market} based on people's reactions, predictive sales, and potential customer insights. Provide actionable recommendations to improve its performance, appeal, or market strategy.
+  expected_output: >
+    Improvement tips containing points about: Key areas needing improvement. Actionable tips to enhance product/service quality, marketability, or customer satisfaction. Suggestions to better align with customer needs and preferences. Insights for optimizing sales or engagement strategies. Recommendations for addressing potential challenges or barriers.
+  agent: improver
