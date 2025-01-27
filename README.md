@@ -27,11 +27,10 @@ The VMS integrates the following technologies:
 - **SambaNova Models:** Real-time inference for running high-speed simulations with large datasets.  
 - **CrewAI:** Multi-agent system creation for market scenario simulations.  
 - **Serper Tools:** Seamless data retrieval for market-specific analysis.  
-
+-**pip install crewai crewai-tools
 ---
 
 ## **Instructions: How to Use VMS**  
-
 ### **1. Clone the Repository**  
 Clone the project from GitHub:  
 ```bash
@@ -39,3 +38,13 @@ git clone https://github.com/<your-username>/<your-repo-name>.git
 cd <your-repo-name>
 python --version (should be more then 3.10)
 pip3 install crewai
+pip3 install
+pip install crewai crewai-tools
+
+1. Create a .env File
+In the root directory of your project, create a new file named .env.
+2. Add the API Keys to the .env File
+Open the .env file in a text editor and add the following lines:
+SERPENT_API_KEY=your_serpent_api_key_here
+SAMBA_NOVA_API_KEY=your_samba_nova_api_key_here
+Replace your_serpent_api_key_here and your_samba_nova_api_key_here with your actual API keys.
